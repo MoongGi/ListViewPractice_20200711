@@ -37,18 +37,8 @@ class BangAdapters (val mContext: Context, val resId: Int, val mList: List<BangD
         // 뿌려줄 근거 데이터 가져오기
         val data = mList[position]
 
-        if (data.price >= 10000)
-        {
-            var amt = data.price.toString()
-            var amt2 = amt.substring(0,1)
-            var amt3 = amt.substring(1,5)
-            txtPrice.text = "${amt2}억${amt3}"
-        }
-        else
-        {
-            txtPrice.text = data.price.toString()
-        }
-        txtAddress.text = "${data.address} ${data.floor} 층"
+        txtPrice.text = data.getFormattedPrice()
+        txtAddress.text = "${data.address}, ${data.getFormattedFloor()}"
         txtDescription.text = data.description
 
 //        => 4가지 항목만 화면에 표시 (가격 / 동네/ 층수 / 설명)

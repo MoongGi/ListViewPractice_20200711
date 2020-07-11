@@ -29,7 +29,7 @@ class MainActivity : BaseActvity() {
     override fun setValues() {
         mBang.add(BangDatas(8000,"남양주시퇴계원",1,"1분거리"))
         mBang.add(BangDatas(1200,"남양주시도농",2,"30분거리"))
-        mBang.add(BangDatas(30000,"남양주시구리",-1,"21분거리"))
+        mBang.add(BangDatas(33100,"남양주시구리",-1,"21분거리"))
         mBang.add(BangDatas(4000,"남양주시다산",0,"0분거리"))
     }
 
