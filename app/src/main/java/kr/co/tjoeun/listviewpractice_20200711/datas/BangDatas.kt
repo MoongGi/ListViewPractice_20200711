@@ -1,7 +1,10 @@
 package kr.co.tjoeun.listviewpractice_20200711.datas
 
+import java.io.Serializable
 
-class BangDatas( val price:Int, val address:String, val floor:Int, val description:String)
+
+class BangDatas
+    ( val price:Int, val address:String, val floor:Int, val description:String) : Serializable
 {
 
     fun getFormattedPrice() : String
