@@ -1,5 +1,6 @@
 package kr.co.tjoeun.listviewpractice_20200711
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,12 +19,21 @@ class MainActivity : BaseActvity() {
         setContentView(R.layout.activity_main)
         mAdapters =BangAdapters(mContnxt, R.layout.bang_item_list, mBang)
         bangListView.adapter = mAdapters
+        setupExents()
         setValues()
         mAdapters.notifyDataSetChanged()
     }
 
     override fun setupExents() {
-        TODO("Not yet implemented")
+        bangListView.setOnItemClickListener { parent, view, position, id ->
+            //어떤방을 선택했는지
+            val clickedRoom = mBang[position]
+
+            //상세 화면으로 진입
+
+            val myIntent = Intent(mContnxt, ViewDetailActivity::class.java)
+            startActivity(myIntent)
+        }
     }
 
     override fun setValues() {
